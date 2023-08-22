@@ -53,6 +53,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'advertisements.urls'
 
+MEDIA_ROOT=Path.joinpath(BASE_DIR, 'media/')
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
