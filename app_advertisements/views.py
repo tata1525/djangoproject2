@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Advertisement
 from .forms import AdvertisementForm
+from django.urls import reverse
 
 # Create your views here.
 def index(request):
@@ -18,7 +19,9 @@ def advertisement_post(request):
         if form.is_valid():
             advertisement= Advertisement(**form.cleaned_data)
             advertisement.user=request.user
-            advertisement.save()      #url=reverse('mane-page') return redirect(url) не работает, нужно импортировать что-то, дополнительное написать     
+            advertisement.save()
+            url=reverse('mane-page')
+            return redirect(url)    
     else:
         form=AdvertisementForm()
     context={'form': form}
