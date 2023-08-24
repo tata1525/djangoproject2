@@ -53,7 +53,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'advertisements.urls'
 
-MEDIA_ROOT=Path.joinpath(BASE_DIR, 'media/')
+MEDIA_ROOT=Path.joinpath(BASE_DIR, 'media')
+MEDIA_URL='media/'
 
 
 TEMPLATES = [
